@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Registration from "../Registration/Registration";
 import NutritionPage from "../NutritionPage/NutritionPage";
+import ActivityPage from "../ActivityPage/ActivityPage";
+import Home from "../Home/Home";
+import Login from "../Login/Login";
 
 function App() {
   const [appState, setAppState] = useState({});
@@ -12,11 +15,16 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             path="/auth/register"
             element={<Registration setAppState={setAppState} />}
           />
-          {/* add other routes here */}
+          <Route
+            path="/auth/login"
+            element={<Login setAppState={setAppState} />}
+          />
+          <Route path="/activity" element={<ActivityPage />} />
           <Route
             path="/nutrition"
             element={

@@ -1,6 +1,136 @@
 .tiles {
   display: flex;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   gap: 20px;
+  
+}
+.css-16ecvb5 {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px auto;
+}
+.css-1561uet {
+  display: flex;
+  flex-direction: column-reverse;
+  --chakra-space-y-reverse: 1;
+  --chakra-divide-y-reverse: 1;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-height: 500px;
+  padding-inline-start: var(--chakra-space-8);
+  padding-inline-end: var(--chakra-space-8);
+  margin-bottom: var(--chakra-space-16);
+}
+.css-lngjhf {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--chakra-space-4);
+  width: 80%;
+}
+.css-bgad6s {
+  font-family: var(--chakra-fonts-heading);
+  font-size: var(--chakra-fontSizes-6xl);
+  line-height: 1;
+  font-weight: var(--chakra-fontWeights-bold);
+  text-align: center;
+}
+.css-1la3ewl {
+  font-family: var(--chakra-fonts-heading);
+  font-size: var(--chakra-fontSizes-2xl);
+  opacity: 0.8;
+  font-weight: var(--chakra-fontWeights-normal);
+  line-height: 1.5;
+  text-align: center;
+}
+.css-uybm84 {
+  display: inline-flex;
+  appearance: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  font-weight: var(--chakra-fontWeights-semibold);
+  transition-property: var(--chakra-transition-property-common);
+  transition-duration: var(--chakra-transition-duration-normal);
+  height: var(--chakra-sizes-10);
+  min-width: var(--chakra-sizes-10);
+  font-size: var(--chakra-fontSizes-md);
+  color: var(--chakra-colors-white);
+  border-radius: 8px;
+  padding-top: var(--chakra-space-4);
+  padding-bottom: var(--chakra-space-4);
+  padding-inline-start: var(--chakra-space-4);
+  padding-inline-end: var(--chakra-space-4);
+  line-height: 1;
+}
+.css-jocq0n {
+  width: 30%;
+  margin-bottom: var(--chakra-space-12);
+}
+.css-1561uet {
+  display: flex;
+  flex-direction: column-reverse;
+  --chakra-space-y-reverse: 1;
+  --chakra-divide-y-reverse: 1;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-height: 500px;
+  padding-inline-start: var(--chakra-space-8);
+  padding-inline-end: var(--chakra-space-8);
+  margin-bottom: var(--chakra-space-16);
+}
+.css-incex5 {
+  border-radius: 1rem;
+  box-shadow: var(--chakra-shadows-2xl);
+}
+.css-gg4vpm {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.css-70qvj9 {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.css-17xejub {
+  flex: 1 1 0%;
+  place-self: stretch;
+}
+.Tile {
+  border-radius: 10px;
+  background: white;
+  width: calc(50% - 10px);
+  padding: 16px;
+  min-width: 80px;
+  min-width: 250px;
+  min-height: 250px;
+  margin-bottom: 16px;
+  transition: all .25s ease-in-out;
+  box-shadow: #09064a26 0 2px 34px;
+}
+.css-dvxtzn {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.css-1jijfcn {
+  font-size: var(--chakra-fontSizes-3xl);
 }
