@@ -18,6 +18,7 @@ export default function NutritionPage({ user, setAppState }) {
     <>
       {/* <p className="appt">Your appointment is on {moment().calendar(new Date(user.date))}</p> */}
       <p className="location">
+        HELLO TEST
         {/* Please head to <strong>{user.location}</strong> on that day. */}
       </p>
     </>
@@ -30,7 +31,7 @@ export default function NutritionPage({ user, setAppState }) {
       Logout
     </button>
   ) : (
-    <Link to="/login">
+    <Link to="/auth/login">
       <button className="btn primary">Login</button>
     </Link>
   );

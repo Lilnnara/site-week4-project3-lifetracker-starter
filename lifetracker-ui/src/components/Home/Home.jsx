@@ -5,6 +5,7 @@ import trackerImg from "../../assets/tracker.jpg";
 import foodImg from "../../assets/food.jpg";
 import athleteImg from "../../assets/athlete.jpg";
 import alarmImg from "../../assets/alarm.jpg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -15,11 +16,11 @@ export default function Home() {
           <h2 className="chakra-heading css-1la3ewl">
             Helping you take back control of your world.
           </h2>
-          <a href="/signup">
+          <Link to="/signup">
             <button type="button" className="chakra-button css-uybm84">
               Create your account now
             </button>
-          </a>
+          </Link>
         </div>
         <div className="css-jocq0n">
           <img
