@@ -2,7 +2,12 @@ const express = require("express")
 const User = require("../models/user")
 const Exercise = require("../models/exercise")
 const router = express.Router()
-const jwt = require("jsonwebtoken");
+const security = require("../middleware/security")
+
+// const jwt = require("jsonwebtoken");
+
+
+
 
 
 router.post("/login", async function (req, res, next) {
@@ -45,6 +50,16 @@ router.get("/exercise/:user_id",  async function (req, res, next) {
     next(err);
   }
 });
+
+router.get("/me", security.requireAuthenticatedUser, async function (req, res, next) {
+  try {
+    const { email } = res.locals.user
+    const user = await User.fetchUserByEmail(email)
+    return res.status(200).json({ user })
+  } catch (err) {
+    next(err)
+  }
+})
 
 
 module.exports = router

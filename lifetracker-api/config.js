@@ -1,28 +1,11 @@
-// require('dotenv').config();
-// require('colors');
 
-// function getDatabaseUri() {
-//     const { DATABASE_USER, DATABASE_PASS, DATABASE_HOST, DATABASE_PORT, DATABASE_NAME } = process.env;
-//     return `postgresql://${DATABASE_USER}:${DATABASE_PASS}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`;
-// }
-
-// module.exports = {
-//     SECRET_KEY: process.env.SECRET_KEY,
-//     PORT: process.env.PORT,
-//     BCRYPT_WORK_FACTOR: process.env.BCRYPT_WORK_FACTOR,
-//     DATABASE_USER: process.env.DATABASE_USER,
-//     DATABASE_PASS: process.env.DATABASE_PASS,
-//     DATABASE_HOST: process.env.DATABASE_HOST,
-//     DATABASE_PORT: process.env.DATABASE_PORT,
-//     DATABASE_NAME: process.env.DATABASE_NAME,
-//     DATABASE_TEST_NAME: process.env.DATABASE_TEST_NAME,
-//     getDatabaseUri,
-// };
 require('dotenv').config();
 require('colors');
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const IS_TESTING = process.env.NODE_ENV === 'test';
+const SECRET_KEY = process.env.SECRET_KEY || "secret-dev"
+
 
 function getDatabaseUri() {
   const dbUser = process.env.DATABASE_USER || 'postgres';
@@ -49,4 +32,6 @@ module.exports = {
   IS_TESTING,
   BCRYPT_WORK_FACTOR,
   getDatabaseUri,
+  SECRET_KEY,
+
 };

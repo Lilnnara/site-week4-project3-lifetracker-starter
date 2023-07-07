@@ -1,7 +1,9 @@
 const db = require("../db")
 const bcrypt = require("bcrypt")
 const { BadRequestError, UnauthorizedError } = require("../utils/errors")
-const { validateFields } = require("../utils/validate") 
+const { validateFields } = require("../utils/validate")
+// const jwt = require("jsonwebtoken")
+
 
 const { BCRYPT_WORK_FACTOR } = require("../config")
 
@@ -29,6 +31,14 @@ class User {
       if (isValid === true) {
         return User._createPublicUser(user)
       }
+      // if (isValid === true) {
+      //   const token = jwt.sign(
+      //     { userId: user.id, userName: user.username },
+      //     secret,
+      //     { expiresIn: "1h" }
+      //   );
+      //   return { user: User._createPublicUser(user), token }
+      // }
     }
 
     throw new UnauthorizedError("Invalid username/password")

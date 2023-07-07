@@ -2,6 +2,7 @@ import "./Login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import apiClient from "../../services/apiClient";
 
 export default function Login({ setAppState }) {
   const navigate = useNavigate();
@@ -24,16 +25,51 @@ export default function Login({ setAppState }) {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
 
+  // const handleOnSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+  //   setErrors((e) => ({ ...e, form: null }));
+
+  //   try {
+  //     const res = await axios.post(`http://localhost:3001/auth/login`, form);
+  //     if (res?.data) {
+  //       setAppState(res.data);
+  //       setIsLoading(false);
+  //       navigate("/activity");
+  //     } else {
+  //       setErrors((e) => ({
+  //         ...e,
+  //         form: "Invalid username/password combination",
+  //       }));
+  //       setIsLoading(false);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     const message = err?.response?.data?.error?.message;
+  //     setErrors((e) => ({
+  //       ...e,
+  //       form: message ? String(message) : String(err),
+  //     }));
+  //     setIsLoading(false);
+  //   }
+  // };
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setErrors((e) => ({ ...e, form: null }));
 
     try {
-      const res = await axios.post(`http://localhost:3001/auth/login`, form);
-      if (res?.data) {
-        setAppState(res.data);
+      const { data, error, message } = await apiClient.login(form);
+      if (error) {
+        setErrors((e) => ({ ...e, form: String(message) }));
         setIsLoading(false);
+        return;
+      }
+
+      if (data) {
+        // setAppState(data)
+        setAppState((s) => ({ ...s, user: data.user, isAuthenticated: true }));
+        localStorage.setItem("lifetracker_token", data.token);
         navigate("/activity");
       } else {
         setErrors((e) => ({
@@ -52,6 +88,7 @@ export default function Login({ setAppState }) {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="css-9cjjy5">
       <div className="chakra-stack css-13ra036">

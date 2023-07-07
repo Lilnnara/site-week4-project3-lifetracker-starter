@@ -70,7 +70,7 @@ export default function ExercisePage({ user, setAppState }) {
                       </button>
                     </Link>
                     <div>
-                      {exercises.map((exercise) => (
+                      {[...exercises].reverse().map((exercise) => (
                         <ExerciseCard key={exercise.id} exercise={exercise} />
                       ))}
                     </div>
