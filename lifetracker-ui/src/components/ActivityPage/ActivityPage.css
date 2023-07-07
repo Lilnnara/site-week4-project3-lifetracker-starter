@@ -137,3 +137,21 @@
     padding: var(--chakra-space-4);
     color: var(--chakra-colors-white);
 }
+@media screen and (min-width: 48em){
+
+.css-1jb3vzl {
+    font-size: var(--chakra-fontSizes-3xl);
+    line-height: 1.2;
+}}
+
+@media screen and (min-width: 30em){
+
+.css-1qwhsm9 {
+    flex-direction: row;
+}}
+
+@media screen and (min-width: 48em){
+
+.css-18qrtb8 {
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+}}

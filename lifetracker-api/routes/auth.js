@@ -1,5 +1,6 @@
 const express = require("express")
 const User = require("../models/user")
+const Exercise = require("../models/exercise")
 const router = express.Router()
 
 router.post("/login", async function (req, res, next) {
@@ -23,5 +24,14 @@ router.post("/register", async function (req, res, next) {
   }
   
 })
+
+router.post("/exercise/create", async function (req, res, next) {
+  try {
+    const exercise = await Exercise.create(req.body);
+    return res.status(201).json({ exercise });
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router

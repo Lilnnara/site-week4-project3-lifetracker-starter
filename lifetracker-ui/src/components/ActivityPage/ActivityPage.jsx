@@ -13,9 +13,11 @@ export default function ActivityPage() {
               className="chakra-stack css-1qwhsm9"
               style={{ marginLeft: "auto" }}
             >
-              <button type="button" className="chakra-button css-moltat">
-                Add Exercise
-              </button>
+              <Link to="/exercise/create">
+                <button type="button" className="chakra-button css-moltat">
+                  Add Exercise
+                </button>
+              </Link>
               <button type="button" className="chakra-button css-l6faz9">
                 Log Sleep
               </button>

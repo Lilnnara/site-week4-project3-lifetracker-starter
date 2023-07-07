@@ -449,43 +449,6 @@ style attribute {
 }
 
 
-/* button {
-    appearance: auto;
-    font-style: ;
-    font-variant-ligatures: ;
-    font-variant-caps: ;
-    font-variant-numeric: ;
-    font-variant-east-asian: ;
-    font-variant-alternates: ;
-    font-weight: ;
-    font-stretch: ;
-    font-size: ;
-    font-family: ;
-    font-optical-sizing: ;
-    font-kerning: ;
-    font-feature-settings: ;
-    font-variation-settings: ;
-    text-rendering: auto;
-    color: buttontext;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: center;
-    align-items: flex-start;
-    cursor: default;
-    box-sizing: border-box;
-    background-color: buttonface;
-    margin: 0em;
-    padding: 1px 6px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonborder;
-    border-image: initial;
-} */
 *, ::before, ::after {
     border-color: var(--chakra-colors-chakra-border-color);
 }
@@ -622,18 +585,6 @@ img {
     }
 }
 
-@media screen and (min-width: 48em) {
-    .css-1561uet {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}
-
-@media screen and (min-width: 80em) {
-    .css-1561uet {
-        justify-content: space-between;
-    }
-}
 @supports (height: -webkit-fill-available) {
 
 :root, :host {
@@ -650,3 +601,23 @@ html {
     text-rendering: optimizelegibility;
     touch-action: manipulation;
 }
+:where(blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre) {
+    margin: 0px;
+}
+:where(button, input, optgroup, select, textarea) {
+    padding: 0px;
+    line-height: inherit;
+    color: inherit;
+}
+
+:where(button, [role="button"]) {
+    cursor: pointer;
+}
+:where(button, input) {
+    overflow: visible;
+}
+@supports (height: -webkit-fill-available) {
+
+:root, :host {
+    --chakra-vh: -webkit-fill-available;
+} }

@@ -6,6 +6,8 @@ import NutritionPage from "../NutritionPage/NutritionPage";
 import ActivityPage from "../ActivityPage/ActivityPage";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
+import ExercisePage from "../ExercisePage/ExercisePage";
+import ExerciseForm from "../ExerciseForm/ExerciseForm";
 
 function App() {
   const [appState, setAppState] = useState({});
@@ -30,6 +32,28 @@ function App() {
           />
           <Route path="/activity" element={<ActivityPage />} />
           <Route
+            path="/exercise/*"
+            element={
+              <ExercisePage
+                user={appState?.user}
+                setAppState={setAppState}
+                appState={appState}
+              />
+            }
+          >
+            <Route
+              path="create"
+              element={
+                <ExerciseForm
+                  user={appState?.user}
+                  setAppState={setAppState}
+                  appState={appState}
+                />
+              }
+            />
+          </Route>
+
+          <Route
             path="/nutrition"
             element={
               <NutritionPage
@@ -46,20 +70,3 @@ function App() {
 }
 
 export default App;
-
-// import "./App.css";
-// import Navbar from "../Navbar/Navbar";
-// import Login from "../Login/Login";
-// import Registration from "../Registration/Registration";
-
-// function App() {
-//   return (
-//     <div>
-//       <Navbar />
-//       <Login />
-//       <Registration />
-//     </div>
-//   );
-// }
-
-// export default App;

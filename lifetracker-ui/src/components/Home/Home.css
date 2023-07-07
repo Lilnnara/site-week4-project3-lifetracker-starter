@@ -6,6 +6,12 @@
   gap: 20px;
   
 }
+
+.Tile:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .css-16ecvb5 {
   display: flex;
   flex-direction: column;
@@ -81,20 +87,7 @@
   width: 30%;
   margin-bottom: var(--chakra-space-12);
 }
-.css-1561uet {
-  display: flex;
-  flex-direction: column-reverse;
-  --chakra-space-y-reverse: 1;
-  --chakra-divide-y-reverse: 1;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  min-height: 500px;
-  padding-inline-start: var(--chakra-space-8);
-  padding-inline-end: var(--chakra-space-8);
-  margin-bottom: var(--chakra-space-16);
-}
+
 .css-incex5 {
   border-radius: 1rem;
   box-shadow: var(--chakra-shadows-2xl);
@@ -134,3 +127,92 @@
 .css-1jijfcn {
   font-size: var(--chakra-fontSizes-3xl);
 }
+
+@media screen and (min-width: 48em) {
+  .css-1561uet {
+      flex-direction: row;
+      justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .css-1561uet {
+      justify-content: space-between;
+  }
+}
+
+
+  @media screen and (min-width: 30em){
+  .css-lngjhf {
+      -webkit-box-align: center;
+      align-items: center;
+  } }
+  @media screen and (min-width: 48em){
+  .css-bgad6s {
+      font-size: var(--chakra-fontSizes-7xl);
+      text-align: left;
+  }}
+  
+  @media screen and (min-width: 30em) {
+  .css-bgad6s {
+      text-align: center;
+  }}
+  @media screen and (min-width: 48em) {
+  
+  .css-1la3ewl {
+      font-size: var(--chakra-fontSizes-3xl);
+      text-align: left;
+  }}
+  @media screen and (min-width: 30em){
+  
+  .css-1la3ewl {
+      text-align: center;
+  }}
+  @media screen and (min-width: 48em){
+  .css-jocq0n {
+      width: 20%;
+      margin-bottom: 0px;
+  }}
+  @media screen and (min-width: 80em) {
+
+.css-16ecvb5 {
+    max-width: 1200px;
+} }
+ 
+
+@media screen and (min-width: 62em){
+
+.css-bgad6s {
+    text-align: left;
+}}
+@media screen and (min-width: 48em) {
+.css-jocq0n {
+    width: 50%;
+    margin-bottom: 0px;
+}}
+@media screen and (min-width: 30em){
+  .css-jocq0n {
+      width: 60%;
+  }}
+  @media screen and (min-width: 62em){
+
+    .css-lngjhf {
+        align-items: flex-start;
+    }}
+    
+    @media screen and (min-width: 48em) {
+      .css-lngjhf {
+          align-items: flex-start;
+          width: 40%;
+      }}
+/* .css-jocq0n {
+  width: 80%;
+  margin-bottom: var(--chakra-space-12);
+} */
+
+@media screen and (min-width: 48em) {
+
+.css-1la3ewl {
+    font-size: var(--chakra-fontSizes-3xl);
+    text-align: left;
+}}

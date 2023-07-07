@@ -18,3 +18,13 @@ CREATE TABLE nutrition (
     user_id INTEGER REFERENCES users(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE exercise (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(255),
+    duration INTEGER,
+    intensity VARCHAR(255),
+    user_id INTEGER REFERENCES users(id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
