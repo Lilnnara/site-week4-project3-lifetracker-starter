@@ -4,8 +4,11 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import bikepathImg from "../../assets/bikepath.jpg";
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
 import ExerciseCard from "../ExerciseCard/ExerciseCard";
+import axios from "axios";
 
 export default function ExercisePage({ user, setAppState }) {
+  const [exercises, setExercises] = useState([]);
+
   const [showForm, setShowForm] = useState(false); // State to control form visibility
 
   const handleAddExercise = () => {
@@ -18,6 +21,24 @@ export default function ExercisePage({ user, setAppState }) {
       setShowForm(true);
     }
   }, [location.pathname]);
+
+  useEffect(() => {
+    const fetchExercises = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:3001/auth/exercise/${user.id}`,
+
+          {
+            params: { user_id: user.user_id },
+          }
+        );
+        setExercises(res.data.exercises);
+      } catch (err) {
+        console.error("Failed to fetch exercises", err);
+      }
+    };
+    fetchExercises();
+  }, []);
 
   return (
     <div className="ExercisePage css-1bpnzr3">
@@ -48,7 +69,11 @@ export default function ExercisePage({ user, setAppState }) {
                         Add Exercise
                       </button>
                     </Link>
-                    <ExerciseCard />
+                    <div>
+                      {exercises.map((exercise) => (
+                        <ExerciseCard key={exercise.id} exercise={exercise} />
+                      ))}
+                    </div>
 
                     <img
                       src={bikepathImg}

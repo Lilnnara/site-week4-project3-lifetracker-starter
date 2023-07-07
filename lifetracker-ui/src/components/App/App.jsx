@@ -8,6 +8,7 @@ import Home from "../Home/Home";
 import Login from "../Login/Login";
 import ExercisePage from "../ExercisePage/ExercisePage";
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
+import jwtDecode from "jwt-decode";
 
 function App() {
   const [appState, setAppState] = useState({});
