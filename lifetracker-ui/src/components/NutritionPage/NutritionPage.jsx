@@ -3,26 +3,21 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function NutritionPage({ appState, setAppState }) {
   const navigate = useNavigate();
-  // const isAuthenticated = Boolean(user?.email);
-
   const { user, isAuthenticated } = appState;
 
   const handleOnLogout = () => {
     setAppState({});
     navigate("/");
   };
+  // THIS IS A TESTING PAGE TO SEE IF AUTHENTICATION WAS COMPLETE
 
   const title = isAuthenticated
-    ? "Appointment Confirmed"
+    ? "You are logged in"
     : "Please login to the portal to see your appointment.";
 
   const content = isAuthenticated ? (
     <>
-      {/* <p className="appt">Your appointment is on {moment().calendar(new Date(user.date))}</p> */}
-      <p className="location">
-        HELLO TEST
-        {/* Please head to <strong>{user.location}</strong> on that day. */}
-      </p>
+      <p className="location">We are currently working on this page!</p>
     </>
   ) : (
     <p className="appt">Thank you!</p>
@@ -54,9 +49,7 @@ export default function NutritionPage({ appState, setAppState }) {
         </div>
       </div>
 
-      <div className="media">
-        {/* <img src={medicalCare} alt="medical care" /> */}
-      </div>
+      <div className="media"></div>
     </div>
   );
 }

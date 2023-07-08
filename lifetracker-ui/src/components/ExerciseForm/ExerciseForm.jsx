@@ -1,7 +1,6 @@
 import "./ExerciseForm.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
 
 import React from "react";
 
@@ -28,7 +27,7 @@ export default function ExerciseForm({ setAppState, user, setShowForm }) {
     try {
       console.log(user);
       const res = await axios.post(
-        "http://localhost:3001/auth/exercise/create",
+        "http://localhost:3001/auth/exercise/create", // need to replace with render link for it to function with deployment
         {
           name: form.name,
           category: form.category,
@@ -39,11 +38,11 @@ export default function ExerciseForm({ setAppState, user, setShowForm }) {
       );
 
       if (res?.data?.exercise) {
-        // replace with your actual success condition
+        // replace with my actual success condition
         // setAppState(res.data);
         setIsLoading(false);
         setShowForm(false);
-        navigate("/exercise"); // navigate to some page after successful submission
+        navigate("/exercise"); // navigate to exercise page after successful submission (need to fix the show form)
       } else {
         setErrors((e) => ({
           ...e,
@@ -62,6 +61,7 @@ export default function ExerciseForm({ setAppState, user, setShowForm }) {
     }
   };
 
+  // we can handle errors, but they arent being displayed at the moment with {error} hehe.
   return (
     <div className="css-0">
       <div className="css-pwgvc2">

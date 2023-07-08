@@ -1,5 +1,5 @@
 const db = require("../db")
-const { BadRequestError } = require("../utils/errors")
+const { BadRequestError } = require("../utils/errors") // needed if I were to use a try and catch
 const { validateFields } = require("../utils/validate")
 
 class Exercise {

@@ -1,8 +1,7 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import apiClient from "../../services/apiClient";
 import "./Registration.css";
-import axios from "axios";
 
 export default function Registration({ setAppState }) {
   const navigate = useNavigate();
@@ -65,6 +64,7 @@ export default function Registration({ setAppState }) {
 
     try {
       const { data, error, message } = await apiClient.register({
+        // calls apiClient to send the request to Render server
         username: form.username,
         password: form.password,
         firstName: form.firstName,
@@ -97,6 +97,7 @@ export default function Registration({ setAppState }) {
     }
   };
 
+  // errors are being handled and displayed (a few for debugging)
   return (
     <div className="css-9cjjy5">
       <div className="chakra-stack css-15xvz01">

@@ -1,7 +1,7 @@
 import "./ExerciseCard.css";
 
 export default function ExerciseCard({ exercise }) {
-  const { name, category, duration, intensity } = exercise;
+  const { name, duration, intensity } = exercise;
 
   return (
     <div className="chakra-stack css-xixnl8">

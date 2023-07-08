@@ -5,8 +5,6 @@ const router = express.Router()
 const security = require("../middleware/security")
 const { createUserJwt } = require("../utils/tokens");
 
-// const jwt = require("jsonwebtoken");
-
 
 
 
@@ -50,6 +48,8 @@ router.get("/exercise/:user_id",  async function (req, res, next) {
   }
 });
 
+
+// To implement the security middleware for strech feature in the future.. they can access info about themselves
 router.get("/me", security.requireAuthenticatedUser, async function (req, res, next) {
   try {
     const { email } = res.locals.user

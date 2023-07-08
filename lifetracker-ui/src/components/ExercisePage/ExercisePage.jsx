@@ -1,6 +1,6 @@
 import "./ExercisePage.css";
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import bikepathImg from "../../assets/bikepath.jpg";
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
 import ExerciseCard from "../ExerciseCard/ExerciseCard";
@@ -9,13 +9,16 @@ import axios from "axios";
 export default function ExercisePage({ user, setAppState, appState }) {
   const [exercises, setExercises] = useState([]);
   const { isAuthenticated } = appState;
+  const location = useLocation();
 
-  const [showForm, setShowForm] = useState(false); // State to control form visibility
+  const [showForm, setShowForm] = useState(false); // State to control form visibility,  might need to move this to app.jsx
 
   const handleAddExercise = () => {
-    setShowForm(true); // Set showForm to true to display the form
+    setShowForm(true); // Set showForm to true to display the form,
   };
+
   useEffect(() => {
+    // an attempt on fixing my exercisePage not going to a normal state after form is being submitted
     if (location.pathname === "/exercise") {
       setShowForm(false);
     } else if (location.pathname === "/exercise/create") {
@@ -27,7 +30,7 @@ export default function ExercisePage({ user, setAppState, appState }) {
     const fetchExercises = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/auth/exercise/${user.id}`,
+          `http://localhost:3001/auth/exercise/${user.id}`, //need to replace with render server url for render deployment
 
           {
             params: { user_id: user.user_id },

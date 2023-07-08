@@ -9,6 +9,7 @@ CREATE TABLE users (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+-- To create another Activity Page (not implemented)
 CREATE TABLE nutrition (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,

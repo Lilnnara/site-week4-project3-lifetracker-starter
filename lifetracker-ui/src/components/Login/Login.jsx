@@ -31,7 +31,7 @@ export default function Login({ setAppState }) {
     setErrors((e) => ({ ...e, form: null }));
 
     try {
-      const { data, error, message } = await apiClient.login(form);
+      const { data, error, message } = await apiClient.login(form); // calls apiClient to send the request to the render server
       if (error) {
         setErrors((e) => ({ ...e, form: String(message) }));
         setIsLoading(false);
@@ -61,6 +61,7 @@ export default function Login({ setAppState }) {
     }
   };
 
+  // We can handle errors for invalid combinations, but they arent being displayed at the moment
   return (
     <div className="css-9cjjy5">
       <div className="chakra-stack css-13ra036">
