@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+
 import apiClient from "../../services/apiClient";
 
 export default function Login({ setAppState }) {
@@ -25,34 +25,6 @@ export default function Login({ setAppState }) {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
 
-  // const handleOnSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-  //   setErrors((e) => ({ ...e, form: null }));
-
-  //   try {
-  //     const res = await axios.post(`http://localhost:3001/auth/login`, form);
-  //     if (res?.data) {
-  //       setAppState(res.data);
-  //       setIsLoading(false);
-  //       navigate("/activity");
-  //     } else {
-  //       setErrors((e) => ({
-  //         ...e,
-  //         form: "Invalid username/password combination",
-  //       }));
-  //       setIsLoading(false);
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //     const message = err?.response?.data?.error?.message;
-  //     setErrors((e) => ({
-  //       ...e,
-  //       form: message ? String(message) : String(err),
-  //     }));
-  //     setIsLoading(false);
-  //   }
-  // };
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -68,8 +40,8 @@ export default function Login({ setAppState }) {
 
       if (data) {
         // setAppState(data)
-        setAppState((s) => ({ ...s, user: data.user, isAuthenticated: true }));
         localStorage.setItem("lifetracker_token", data.token);
+        setAppState((s) => ({ ...s, user: data.user, isAuthenticated: true }));
         navigate("/activity");
       } else {
         setErrors((e) => ({

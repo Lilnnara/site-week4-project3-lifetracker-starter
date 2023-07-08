@@ -37,6 +37,7 @@
   max-width: 1680px;
   margin-inline: auto;
 }
+
 .css-1qfrez2 {
   display: flex;
   margin-top: var(--chakra-space-16);
@@ -113,3 +114,23 @@
   height: 300px;
   border-radius: var(--chakra-radii-lg);
 }
+.css-1m340o4 {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline-start: var(--chakra-space-4);
+  padding-inline-end: var(--chakra-space-4);
+  max-width: var(--chakra-sizes-container-lg);
+  padding-top: 1.5rem;
+}
+.css-1dklj6k {
+  font-family: var(--chakra-fonts-heading);
+  font-weight: var(--chakra-fontWeights-bold);
+  font-size: var(--chakra-fontSizes-3xl);
+  line-height: 1.33;
+}
+@media screen and (min-width: 48em) {
+
+.css-1dklj6k {
+    font-size: var(--chakra-fontSizes-4xl);
+    line-height: 1.2;
+}}

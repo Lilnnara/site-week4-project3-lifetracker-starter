@@ -6,6 +6,7 @@ export default function Navbar({ user, setAppState }) {
   const isAuthenticated = Boolean(user?.email);
 
   const handleOnLogout = () => {
+    localStorage.setItem("lifetracker_token", null);
     setAppState({});
     navigate("/");
   };

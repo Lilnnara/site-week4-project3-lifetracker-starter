@@ -14,6 +14,8 @@ class ApiClient {
     const url = `${this.remoteHostUrl}/${endpoint}`
     console.debug("API Call:", endpoint, data, method)
     const params = method === "get" ? data : {}
+
+    
     const headers = {
       "Content-Type": "application/json",
     }

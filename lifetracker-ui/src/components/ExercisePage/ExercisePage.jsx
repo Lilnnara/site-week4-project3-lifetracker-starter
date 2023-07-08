@@ -6,8 +6,9 @@ import ExerciseForm from "../ExerciseForm/ExerciseForm";
 import ExerciseCard from "../ExerciseCard/ExerciseCard";
 import axios from "axios";
 
-export default function ExercisePage({ user, setAppState }) {
+export default function ExercisePage({ user, setAppState, appState }) {
   const [exercises, setExercises] = useState([]);
+  const { isAuthenticated } = appState;
 
   const [showForm, setShowForm] = useState(false); // State to control form visibility
 
@@ -40,7 +41,7 @@ export default function ExercisePage({ user, setAppState }) {
     fetchExercises();
   }, []);
 
-  return (
+  const content = isAuthenticated ? (
     <div className="ExercisePage css-1bpnzr3">
       <div className="css-19cns6y">
         <div className="chakra-stack css-1cgbrw5">
@@ -94,5 +95,10 @@ export default function ExercisePage({ user, setAppState }) {
         </div>
       </div>
     </div>
+  ) : (
+    <div className="chakra-container css-1m340o4">
+      <h2 class="chakra-heading css-1dklj6k">Log in to see your data.</h2>
+    </div>
   );
+  return <div>{content}</div>;
 }

@@ -3,6 +3,7 @@ const User = require("../models/user")
 const Exercise = require("../models/exercise")
 const router = express.Router()
 const security = require("../middleware/security")
+const { createUserJwt } = require("../utils/tokens");
 
 // const jwt = require("jsonwebtoken");
 
@@ -13,7 +14,8 @@ const security = require("../middleware/security")
 router.post("/login", async function (req, res, next) {
   try {
     const user = await User.authenticate(req.body)
-    return res.status(200).json({ user })
+    const token = createUserJwt(user);
+    return res.status(200).json({ user, token })
   } catch (err) {
     next(err)
   }
@@ -22,14 +24,11 @@ router.post("/login", async function (req, res, next) {
 router.post("/register", async function (req, res, next) {
   try {
     const user = await User.register(req.body)
-    console.log(user);
-    return res.status(201).json({ user })
-    
-    
+    const token = createUserJwt(user);
+    return res.status(201).json({ user, token })
   } catch (err) {
     next(err)
   }
-  
 })
 
 router.post("/exercise/create", async function (req, res, next) {

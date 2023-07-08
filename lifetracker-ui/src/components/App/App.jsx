@@ -8,7 +8,6 @@ import Home from "../Home/Home";
 import Login from "../Login/Login";
 import ExercisePage from "../ExercisePage/ExercisePage";
 import ExerciseForm from "../ExerciseForm/ExerciseForm";
-import jwtDecode from "jwt-decode";
 
 function App() {
   const [appState, setAppState] = useState({});
@@ -31,7 +30,12 @@ function App() {
             path="/auth/login"
             element={<Login setAppState={setAppState} />}
           />
-          <Route path="/activity" element={<ActivityPage />} />
+          <Route
+            path="/activity"
+            element={
+              <ActivityPage setAppState={setAppState} appState={appState} />
+            }
+          />
           <Route
             path="/exercise/*"
             element={
@@ -57,11 +61,7 @@ function App() {
           <Route
             path="/nutrition"
             element={
-              <NutritionPage
-                setAppState={setAppState}
-                appState={appState}
-                user={appState?.user}
-              />
+              <NutritionPage setAppState={setAppState} appState={appState} />
             }
           />
         </Routes>

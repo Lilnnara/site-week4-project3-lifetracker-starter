@@ -155,3 +155,9 @@
 .css-18qrtb8 {
     grid-template-columns: repeat(2, minmax(0px, 1fr));
 }}
+@media screen and (min-width: 48em) {
+
+    .css-1dklj6k {
+        font-size: var(--chakra-fontSizes-4xl);
+        line-height: 1.2;
+    }}

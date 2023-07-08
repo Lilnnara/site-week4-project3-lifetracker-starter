@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function NutritionPage({ user, setAppState }) {
+export default function NutritionPage({ appState, setAppState }) {
   const navigate = useNavigate();
-  const isAuthenticated = Boolean(user?.email);
+  // const isAuthenticated = Boolean(user?.email);
+
+  const { user, isAuthenticated } = appState;
 
   const handleOnLogout = () => {
     setAppState({});
