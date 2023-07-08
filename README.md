@@ -26,6 +26,8 @@ By the end of this project you will be able to...
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/090779c7ef844476bdb9a526b29579f7-with-play.gif">
   </a>
 
+Deployed website link: https://lifetracker-ui-jssc.onrender.com/
+
 ### Core Features
 
 - [X ] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about. _Note:_ This is the only page that unauthenticated users should be able to view.
