@@ -97,7 +97,7 @@ export default function ExercisePage({ user, setAppState, appState }) {
     </div>
   ) : (
     <div className="chakra-container css-1m340o4">
-      <h2 class="chakra-heading css-1dklj6k">Log in to see your data.</h2>
+      <h2 className="chakra-heading css-1dklj6k">Log in to see your data.</h2>
     </div>
   );
   return <div>{content}</div>;
