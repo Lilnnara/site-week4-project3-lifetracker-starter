@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import codepathImg from "../../assets/codepath.svg";
 
 export default function Navbar({ user, setAppState }) {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ export default function Navbar({ user, setAppState }) {
     <div className="Navbar css-15bu2in">
       <div className="css-70qvj9">
         <Link className="chakra-link css-14rj303" to="/">
-          <img src="../src/assets/codepath.svg" alt="logo" />
+          <img src={codepathImg} alt="logo" />
         </Link>
         <Link className="chakra-link css-74uit1" to="/activity">
           Activity
